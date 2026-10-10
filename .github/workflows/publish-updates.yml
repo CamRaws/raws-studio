@@ -1,0 +1,31 @@
+name: Publish source-preview updates
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'scripts/**', 'tests/**', 'package*.json', '.github/workflows/publish-updates.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: preview-update-feed
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test tests/*.test.cjs
+      - run: node scripts/make-update.cjs
+      - name: Publish verified manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/latest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Publish source-preview update manifest'
+          git push origin HEAD:main

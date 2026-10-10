@@ -1,0 +1,40 @@
+{
+  "name": "raws-studio",
+  "version": "0.3.0",
+  "description": "Layer-based news and geography video editor for macOS",
+  "main": "src/main.cjs",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "build:mac": "electron-builder --mac dmg zip"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "ffmpeg-static": "5.2.0",
+    "maplibre-gl": "6.13.0"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "com.rawsreports.studio",
+    "productName": "Raws Studio",
+    "files": [
+      "src/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**"
+    ],
+    "mac": {
+      "category": "public.app-category.video",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    }
+  }
+}
