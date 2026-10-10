@@ -5,3 +5,5 @@ The app uses Electron, MapLibre GL JS, electron-builder, ffmpeg-static, and Hugg
 Map and data providers retain their own attribution and usage requirements. The composition draws Esri, OpenStreetMap, NASA, NWS, and USGS source information as applicable. Do not remove provider attribution from exported videos. Imported footage, music, photos, logos, and data retain their original ownership.
 
 Automatic captions download the Xenova/whisper-tiny.en model, derived from OpenAI Whisper. Model and runtime licensing information is available in the model card and installed dependencies. Audio processing runs locally.
+
+State boundaries: U.S. Census Bureau 2025 cartographic boundaries, 1:5,000,000; https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_state_5m.zip . Coordinates rounded to five decimal places. Includes states, DC, and available territories; statistical/editorial boundaries, not surveyed legal boundaries.
