@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "0.3.2",
-  "revision": "51d57f7fb0cad690dc39d1e295bd8f37326741ca",
+  "revision": "5fb913cd46b3d82db3a8bbdafbe14ad7e2484eff",
   "files": [
     {
       "path": "package.json",
@@ -30,8 +30,8 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 73986,
-      "sha256": "49345f61f453742b7aa0a79e913ad3fad221073bca9e61b2c9d8b31967a944a8"
+      "bytes": 74117,
+      "sha256": "7fc437e084453035fda33b793ea185568a1329d085dab90ded2c070f70e8ee8a"
     },
     {
       "path": "src/boot.mjs",
