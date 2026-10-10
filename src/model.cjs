@@ -5,9 +5,10 @@
   const count=clamp(Math.round(l.rings||1),1,30),spacing=Math.max(1,l.spacing),reach=Math.max(l.radius,l.reach),elapsed=Math.max(0,t-l.start),speed=Math.max(1,l.speed),delay=Math.max(0,l.delay);
   return Array.from({length:count},(_,i)=>{
    const begin=l.radius+i*spacing;
-   if(begin>reach||elapsed<i*delay)return null;
+   if(begin>reach||(l.animate!==false&&elapsed<i*delay))return null;
+   if(l.animate===false)return {radius:begin,opacity:1,width:l.lineWidth};
    const travel=reach-begin,cycle=Math.max(.01,travel/speed),age=elapsed-i*delay;
-   if(!l.loop&&age>cycle)return null;
+   if(!l.loop&&age>cycle)return l.hold?{radius:reach,opacity:1,width:l.lineWidth}:null;
    const phase=l.loop ? age%cycle : age;
    return {radius:begin+phase*speed,opacity:l.fade?1-phase/cycle:1,width:l.lineWidth};
   }).filter(Boolean);
