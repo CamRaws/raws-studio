@@ -48,5 +48,6 @@
   const start=Math.max(0,c.timestamp[0]),end=Math.min(total,Number.isFinite(c.timestamp[1])?c.timestamp[1]:total);
   return {start:l.start+start,duration:Math.max(.03,end-start),text:c.text.trim()};
  }).filter(c=>c.start<l.start+total);}
- const api={clamp,active,rings,cameraAt,layer,validate,sourceCrop,layoutRects,captionsFromChunks};if(typeof module!=='undefined')module.exports=api;else root.StudioModel=api;
+ function geographyVisible(l,layers,t){if(!l.mapId)return true;const i=layers.findIndex(p=>p.id===l.mapId&&p.type==='map'),parent=layers[i];if(!parent||!active(parent,t))return false;return !layers.slice(0,i).some(p=>p.type==='map'&&active(p,t)&&p.opacity>=.999&&p.animation!=='fade'&&p.x<=parent.x&&p.y<=parent.y&&p.x+p.w>=parent.x+parent.w&&p.y+p.h>=parent.y+parent.h);}
+ const api={geographyVisible,clamp,active,rings,cameraAt,layer,validate,sourceCrop,layoutRects,captionsFromChunks};if(typeof module!=='undefined')module.exports=api;else root.StudioModel=api;
 })(globalThis);
