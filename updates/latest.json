@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "version": "0.4.0",
-  "revision": "111b4943f9d4dc4ea1c3eeec4a2bb7e215aaf8f3",
+  "version": "0.4.1",
+  "revision": "8139bc55cc4f6394354459f6e2df1d778ff36d54",
   "files": [
     {
       "path": "package.json",
       "bytes": 888,
-      "sha256": "122ee4d22e039094036775599600d3ca8df205b0e74a814c281bb2f72bfdaa52"
+      "sha256": "2431b7451b78e4368925af826f2b9893941955fdcaecd239610d6042b80c9739"
     },
     {
       "path": "package-lock.json",
       "bytes": 202930,
-      "sha256": "115c2c6dc0c6ad34fc5f092019642a045ccdd4a4e01ed9316e8dbbca09434ebe"
+      "sha256": "db4bc28be03bcef564c6cefa58b1a25d78c8446405a876733263914fbc671ef5"
     },
     {
       "path": "README.md",
-      "bytes": 19342,
-      "sha256": "601ef244878b66bed04c5d8bc4d731fa4f2b3a8ac8439f21c5f4cd9f0c959406"
+      "bytes": 20017,
+      "sha256": "1f44531d2e8cb8b8a7a2e90801061e57c35a9634ed4c82992e41fa9d4799b67a"
     },
     {
       "path": "THIRD_PARTY.md",
@@ -30,8 +30,8 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 90246,
-      "sha256": "cb18c371e1d773994e568bea56f7d006c223b5c0a54fa2091ba492237b05c8f9"
+      "bytes": 89699,
+      "sha256": "60ca82cf0d7364bfcc78527e1b4fa0fddb3cd42603114e516cfab746cd379fc0"
     },
     {
       "path": "src/boot.mjs",
@@ -51,7 +51,7 @@
     {
       "path": "src/index.html",
       "bytes": 7587,
-      "sha256": "fc4bb2a77e1ab0872f306f4e58548eae61257ec81c54e86f16048a6ab5f52816"
+      "sha256": "2dea38145f8f1e54fd2e8a3f9fe4e00a2fae0b53c3876ac13395ebb47382569a"
     },
     {
       "path": "src/main.cjs",
@@ -60,8 +60,8 @@
     },
     {
       "path": "src/model.cjs",
-      "bytes": 4462,
-      "sha256": "7fda5f00f41bca507863e80f8c163f454d1fdce11a922f93bff970196c57053b"
+      "bytes": 5084,
+      "sha256": "5bb90eb15b4ed42c47473be510e05a2b896e83e6be8785ff3708d4112cc0364a"
     },
     {
       "path": "src/preload.cjs",
@@ -70,8 +70,8 @@
     },
     {
       "path": "src/quake.js",
-      "bytes": 7535,
-      "sha256": "1ddae600b3053042ad1cabcda87311c835596ba23dcc9ee826acfec2e42a2ce1"
+      "bytes": 7524,
+      "sha256": "7f18df354b8a0a7da460fdb072982e4b9daf006aa288bd731488ec952aec5e70"
     },
     {
       "path": "src/states.js",
@@ -80,8 +80,8 @@
     },
     {
       "path": "src/style.css",
-      "bytes": 15520,
-      "sha256": "a6685ff472606eede4d464ccb8ca6cfc101943b15439df39ea7761593c101299"
+      "bytes": 15812,
+      "sha256": "3bfe839e7eaace0e03278354d13f4b0ae8948f130996f7e129ad2456b84c6905"
     }
   ]
 }
