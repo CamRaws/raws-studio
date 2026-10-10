@@ -3,8 +3,16 @@
  const active=(l,t)=>l.visible && t>=l.start && t<l.start+l.duration;
  function rings(l,t){
   const count=clamp(Math.round(l.rings||1),1,30),spacing=Math.max(1,l.spacing),reach=Math.max(l.radius,l.reach),elapsed=Math.max(0,t-l.start),speed=Math.max(1,l.speed),delay=Math.max(0,l.delay);
+  if(l.animate!==false&&l.loop){
+   const span=Math.max(1,reach-l.radius),gap=l.autoSpacing!==false?span/count:spacing,period=Math.max(span,count*gap),phase=elapsed*speed;
+   const smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x);},edge=Math.min(span*.12,Math.max(8,gap*.3));
+   return Array.from({length:count},(_,i)=>{const distance=(phase+i*gap)%period;if(distance>span)return null;
+    const opacity=smooth(distance/edge)*smooth((span-distance)/edge)*(l.fade?1-distance/span:1);
+    return {radius:l.radius+distance,opacity,width:l.lineWidth};
+   }).filter(Boolean);
+  }
   return Array.from({length:count},(_,i)=>{
-   const begin=l.radius+i*spacing;
+   const begin=l.radius+i*(l.autoSpacing?Math.max(1,(reach-l.radius)/count):spacing);
    if(begin>reach||(l.animate!==false&&elapsed<i*delay))return null;
    if(l.animate===false)return {radius:begin,opacity:1,width:l.lineWidth};
    const travel=reach-begin,cycle=Math.max(.01,travel/speed),age=elapsed-i*delay;
